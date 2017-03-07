@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static('client'));
 
-app.post('/search', (req, res) => {
+app.post('/', (req, res) => {
 
 	var title = req.body.title;
 

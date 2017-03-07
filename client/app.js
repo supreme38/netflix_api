@@ -4,7 +4,7 @@ angular.module('app', [])
 
   $scope.search = (data) => {
     $scope.results = true;
-    $http.post('/search', data).then((response) => {
+    $http.post('/', data).then((response) => {
 			$scope.list = (response.data)
       $scope.query.title = null;
       console.log(response.data)
