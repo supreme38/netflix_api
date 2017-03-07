@@ -6,7 +6,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="app.js" charset="utf-8"></script>
   </head>
-  <body>
-    {{2 + 2}}
+  <body ng-controller="mainCtrl">
+    <form class="form" method="post">
+      <input type="text" ng-model="query.title" />
+      <input type="submit" ng-click="search(query)" />
+    </form>
+
+    <div ng-model="list">{{list}}</div>
   </body>
 </html>
