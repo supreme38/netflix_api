@@ -1,6 +1,6 @@
 angular.module('app', [])
 
-.controller('mainCtrl', function($scope, $http, $animate) {
+.controller('mainCtrl', function($scope, $http) {
 
   $scope.search = (data) => {
     $scope.clear();
@@ -24,6 +24,5 @@ angular.module('app', [])
     $scope.results = true;
     $scope.error = false;
   }
-
 
 });
