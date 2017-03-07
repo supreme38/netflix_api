@@ -6,11 +6,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css"> -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-  <body ng-controller="mainCtrl">
+  <body ng-controller="mainCtrl" class="animate">
     <h1>app_title_goes_here</h1>
 
     <form type="submit" class="form" method="post" >
@@ -18,7 +16,7 @@
       <button ng-click="search(query)">Search</button>
     </form>
 
-    <div ng-model="list" ng-show="results" class='container'>
+    <div ng-model="list" ng-show="results" class='container' ng-class="fadeIn">
       <img ng-src="{{ list.query2.Poster }}" />
       <div class="wrapper">
         <h2>{{ list.query2.Title }}</h2>
@@ -34,7 +32,7 @@
     </div>
 
     <div>
-      <h1 ng-show="error">Not in netflix</h1>
+      <h1 ng-show="error" ng-class="fadeIn">Not in netflix</h1>
     <div>
 
   </body>

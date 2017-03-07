@@ -1,14 +1,15 @@
 angular.module('app', [])
 
-.controller('mainCtrl', function($scope, $http) {
+.controller('mainCtrl', function($scope, $http, $animate) {
 
   $scope.search = (data) => {
+    $scope.clear();
     if (data === undefined) {
       return;
     }
-    $scope.clear();
     $http.post('/', data).then((response) => {
-			$scope.list = (response.data);
+      $scope.fadeIn = "animate";
+      $scope.list = (response.data);
       $scope.query.title = null;
       console.log(response.data)
       if (response.data.statusCode === 404) {
@@ -19,8 +20,10 @@ angular.module('app', [])
 	}
 
   $scope.clear = () => {
+    $scope.fadeIn = undefined;
     $scope.results = true;
     $scope.error = false;
   }
-  
+
+
 });
