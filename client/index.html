@@ -7,8 +7,12 @@
     <script src="app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
+
   <body ng-controller="mainCtrl">
+    <h1>title_in_progress</h1>
+
     <form class="form" method="post">
       <input type="text" ng-model="query.title" class="textbox" />
       <input type="submit" ng-click="search(query)" class="create" />
@@ -17,11 +21,15 @@
     <div ng-model="list" ng-show="results" class='container'>
       <img ng-src="{{ list.query2.Poster }}" />
       <div class="wrapper">
-        <h1>{{ list.query2.Title }}</h1>
-        <h3>Actors: {{ list.query2.Actors }}</h3>
-        <h3>Director: {{ list.query2.Director }}</h3>
-        <h3>Metascore: {{ list.query2.Metascore }}</h3>
-        <h3>imdbRating: {{ list.query2.imdbRating }}</h3>
+        <h2>{{ list.query2.Title }}</h2>
+        <h4>Actors: {{ list.query2.Actors }}</h3>
+        <h4>Director: {{ list.query2.Director }}</h4>
+        <h4>Awards: {{ list.query2.Awards }}</h4>
+        <h4>Awards: {{ list.query2.Rated }}</h4>
+        <h4>Awards: {{ list.query2.Released }}</h4>
+        <h4>Awards: {{ list.query2.Runtime }}</h4>
+        <h4>Metascore: {{ list.query2.Metascore }}</h4>
+        <h4>imdbRating: {{ list.query2.imdbRating }}</h4>
       </div>
     </div>
 

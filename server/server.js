@@ -11,6 +11,7 @@ app.use('/', express.static('client'));
 app.post('/', (req, res) => {
 
 	var title = req.body.title;
+	var title = title.split(' ').join('%') + ('%');
 
 	let options1 = {
 		uri: 'http://netflixroulette.net/api/api.php?',
