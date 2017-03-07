@@ -11,9 +11,8 @@ app.use('/', express.static('client'));
 app.post('/search', (req, res) => {
 
 	var title = req.body.title;
-	console.log('******************', title)
 
-	let options = {
+	let options1 = {
 		uri: 'http://netflixroulette.net/api/api.php?',
 		qs: {
 			title: title
@@ -30,21 +29,23 @@ app.post('/search', (req, res) => {
 		json: true
 	}
 
-	var obj = {};
+	var info = {};
 
-	rp(options)
-		.then((repos) => {
-			console.log("*****", repos)
-			obj['movie1'] = repos;
+	rp(options1)
+		.then((results) => {
+			info['query1'] = results;
 		})
-		.then(rp(options2)
-			.then((repos) => {
-				obj['movie2'] = repos
-				res.send(obj)
+		.then(() => {
+			rp(options2)
+			.then((results) => {
+				info['query2'] = results;
 			})
-		)
+			.then(() => {
+				res.send(info)
+			})
+		})
 		.catch((err) => {
-			throw(err)
+			res.send(err)
 		});
 });
 

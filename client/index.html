@@ -5,13 +5,29 @@
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
   </head>
   <body ng-controller="mainCtrl">
     <form class="form" method="post">
-      <input type="text" ng-model="query.title" />
-      <input type="submit" ng-click="search(query)" />
+      <input type="text" ng-model="query.title" class="textbox" />
+      <input type="submit" ng-click="search(query)" class="create" />
     </form>
 
-    <div ng-model="list">{{list}}</div>
+    <div ng-model="list" ng-show="results" class='container'>
+      <img ng-src="{{ list.query2.Poster }}" />
+      <div class="wrapper">
+        <h1>{{ list.query2.Title }}</h1>
+        <h3>Actors: {{ list.query2.Actors }}</h3>
+        <h3>Director: {{ list.query2.Director }}</h3>
+        <h3>Metascore: {{ list.query2.Metascore }}</h3>
+        <h3>imdbRating: {{ list.query2.imdbRating }}</h3>
+      </div>
+    </div>
+
+    <div>
+      <h1 ng-show="error">Not in netflix</h1>
+    <div>
+
   </body>
 </html>

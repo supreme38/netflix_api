@@ -1,11 +1,20 @@
 angular.module('app', [])
 
 .controller('mainCtrl', function($scope, $http) {
+
   $scope.search = (data) => {
-		$http.post('/search', data).then((response) => {
+    $scope.results = true;
+    $http.post('/search', data).then((response) => {
 			$scope.list = (response.data)
-			console.log(response.data)
+      $scope.query.title = null;
+      console.log(response.data)
+      if (response.data.statusCode === 404) {
+        console.log('errrr')
+        $scope.error = true;
+        $scope.results = false;
+      }
 		});
 	}
+
 
 });
