@@ -3,6 +3,9 @@ angular.module('app', [])
 .controller('mainCtrl', function($scope, $http) {
 
   $scope.search = (data) => {
+    if (data === undefined) {
+      return;
+    }
     $scope.clear();
     $http.post('/', data).then((response) => {
 			$scope.list = (response.data);
@@ -19,5 +22,5 @@ angular.module('app', [])
     $scope.results = true;
     $scope.error = false;
   }
-
+  
 });
