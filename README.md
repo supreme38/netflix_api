@@ -1,5 +1,5 @@
 # if-netflix-then-omdb
->Fetches Movie info if the movie exist on Netflix.
+>Fetches movie info if the movie exist on Netflix.
 
 ## Features
 - Checks if movie exist on Netflix
