@@ -3,7 +3,7 @@
 
 ## Features
 - Checks if movie exist on Netflix
-- Returns movie info
+- Returns movie info from OMDb
 
 ## Installation
 ```git clone https://github.com/vincentliu38/if-netflix-then-omdb```
