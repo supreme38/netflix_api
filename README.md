@@ -7,7 +7,9 @@
 
 ## Installation
 ```git clone https://github.com/vincentliu38/if-netflix-then-omdb```
+
 ```cd if-netflix-then-omdb```
+
 ```npm install```
 
 ## Usage
@@ -19,4 +21,4 @@
 - [AngularJS](https://angularjs.org)
 
 ## License
-This project is licensed under the MIT License. For more information see [LICENSE](https://github.com/vincentliu38/connect-4/blob/gh-pages/LICENSE) file.
+This project is licensed under the MIT License. For more information see [LICENSE](https://github.com/vincentliu38/if-netflix-then-omdb/blob/master/LICENSE) file.
